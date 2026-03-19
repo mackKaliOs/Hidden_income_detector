@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  hidden-income-detector:
+    volumes:
+      - ./data:/app/data
+      - ./output:/app/output
+    environment:
+      PYTHONUNBUFFERED: 1
+    command: python -m src.framework
+
+  demo:
+    volumes:
+      - ./data:/app/data
+      - ./output:/app/output
+    environment:
+      PYTHONUNBUFFERED: 1
+    command: python -m src.exhibits
